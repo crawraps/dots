@@ -43,14 +43,13 @@ local Telescope = setmetatable({}, {
 
 -- Ctrl-p = fuzzy finder
 vim.keymap.set('n', '<C-P>', function()
-    local ok = pcall(Telescope.git_files, { show_untracked = true })
-    if not ok then
-        Telescope.find_files()
-    end
+    finders.find_files({
+      hidden = true,
+    })
 end)
 
--- Get :help at the speed of light
-vim.keymap.set('n', '<leader>h', Telescope.help_tags)
+-- get :help at the speed of light
+vim.keymap.set('n', "'h", Telescope.help_tags)
 
 -- Fuzzy find active buffers
 vim.keymap.set('n', "'b", Telescope.buffers)

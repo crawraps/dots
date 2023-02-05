@@ -54,3 +54,5 @@ A.nvim_create_autocmd('BufReadPost', {
         end
     end,
 })
+
+return num_au

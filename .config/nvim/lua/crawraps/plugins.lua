@@ -13,26 +13,29 @@ return require('packer').startup({
         -- Required plugins --
         use('nvim-lua/plenary.nvim')
 
-        ----------------------------------------
-        -- Theme, Icons, Statusbar, Bufferbar --
-        ----------------------------------------
+        --------------------------------------------------------
+        -- Theme, Icons, Statusbar, Bufferbar, Welcome screen --
+        --------------------------------------------------------
 
-        use({
+        use({ -- icons
             'kyazdani42/nvim-web-devicons',
             config = function()
                 require('nvim-web-devicons').setup()
             end,
         })
 
-        use({
+        use({ -- themes
             "catppuccin/nvim",
             as = "catppuccin",
             config = function()
                 require('crawraps.plugins.catppuccin')
             end,
         })
+        use 'marko-cerovac/material.nvim'
 
-        use({
+        use({'stevearc/dressing.nvim'}) -- popups
+
+        use({ -- bottom info line
             'nvim-lualine/lualine.nvim',
             after = 'catppuccin',
             event = 'BufEnter',
@@ -41,13 +44,21 @@ return require('packer').startup({
             end,
         })
 
-        use({
+        use({ -- top buffer line
             'akinsho/bufferline.nvim',
             tag = "v3.*",
             requires = 'nvim-tree/nvim-web-devicons',
             config = function()
                 require('crawraps.plugins.bufferline')
             end,
+        })
+
+        use ({ -- welcome screen
+            'goolord/alpha-nvim',
+            after = 'nvim-web-devicons',
+            config = function ()
+                require('crawraps.plugins.alpha')
+            end
         })
 
         -----------------------------------
@@ -131,17 +142,26 @@ return require('packer').startup({
         })
 
         use({
+            'shatur/neovim-session-manager',
+            config = function()
+              require('crawraps.plugins.session-manager')
+            end,
+        })
+
+        use({
             {
                 'nvim-telescope/telescope.nvim',
+                tag = '0.1.1',
                 event = 'CursorHold',
                 config = function()
                     require('crawraps.plugins.telescope')
                 end,
+                after = 'plenary.nvim'
             },
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 after = 'telescope.nvim',
-                run = 'make',
+                run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
                 config = function()
                     require('telescope').load_extension('fzf')
                 end,
@@ -294,6 +314,7 @@ return require('packer').startup({
                 require('fidget').setup()
             end,
         })
+        
     end,
     config = {
         display = {

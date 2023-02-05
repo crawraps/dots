@@ -1,13 +1,20 @@
+swaylock
+swayidle
+swaybg
 mako
 gsettings
 wl-clipboard
 qalculate-gtk
 htop
+brightnessctl
+pulseaudio
 
 kitty
 ranger
-nvim
+neovim
 waybar
 wofi
 zsh
 firefox
+gitui
+end
