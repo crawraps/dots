@@ -43,7 +43,7 @@ local Telescope = setmetatable({}, {
 
 -- Ctrl-p = fuzzy finder
 vim.keymap.set('n', '<C-P>', function()
-    finders.find_files({
+    finders.git_files({
       hidden = true,
     })
 end)
