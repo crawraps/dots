@@ -29,7 +29,7 @@
   "clock": {
     "format": "{:%I:%M}",
     "tooltip": true,
-    "tooltip-format": "ebYeyptY"
+    "tooltip-format": "qkifgl"
   },
   "backlight": {
     "format": "{percent}% {icon}",

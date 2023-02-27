@@ -36,7 +36,7 @@ nls.setup({
         -----------------
         -- DIAGNOSTICS --
         -----------------
-        dgn.eslint_d,
+        -- dgn.eslint_d,
         dgn.shellcheck,
         dgn.luacheck.with({
             extra_args = { '--globals', 'vim', '--std', 'luajit' },

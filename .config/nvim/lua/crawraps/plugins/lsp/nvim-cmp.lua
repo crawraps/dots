@@ -57,10 +57,20 @@ local icons = {
     TypeParameter = '',
 }
 
-local aliases = {
-    nvim_lsp = 'lsp',
-    luasnip = 'snippet',
-}
+-- fzf match
+vim.cmd('highlight! CmpItemAbbrMatch guibg=NONE guifg=#fc99cd')
+vim.cmd('highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch')
+-- Variable
+vim.cmd('highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE')
+vim.cmd('highlight! link CmpItemKindInterface CmpItemKindVariable')
+vim.cmd('highlight! link CmpItemKindText CmpItemKindVariable')
+-- Functions
+vim.cmd('highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0')
+vim.cmd('highlight! link CmpItemKindMethod CmpItemKindFunction')
+-- Keyword
+vim.cmd('highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4')
+vim.cmd('highlight! link CmpItemKindProperty CmpItemKindKeyword')
+vim.cmd('highlight! link CmpItemKindUnit CmpItemKindKeyword')
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
@@ -89,8 +99,6 @@ cmp.setup({
         format = function(entry, item)
             -- Kind icons
             item.kind = string.format('%s %s', icons[item.kind], item.kind)
-            -- Source
-            item.menu = string.format('[%s]', aliases[entry.source.name] or entry.source.name)
             return item
         end,
     },

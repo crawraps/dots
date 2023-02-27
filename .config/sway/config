@@ -26,7 +26,7 @@ set $menu dmenu_path | wofi --show drun -I | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 set $wallpapers_path $HOME/Images/wallpapers
-output * bg `find /home/kareem/Images/wallpapers -type f | shuf -n 1` fill
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 # Change wallpaper shortcut
 bindsym $mod+w output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
@@ -58,7 +58,7 @@ exec swayidle -w \
 #
 # Example configuration:
 #
-input "10182:480:GXTP7863:00_27C6:01E0_Touchpad" {
+input "1739:52781:MSFT0001:00_06CB:CE2D_Touchpad" {
     dwt enabled
     tap enabled
     natural_scroll enabled
@@ -278,7 +278,7 @@ mode "$mode_gaps_outer" {
 default_border pixel 0
 
 # Make inactive window transparent
-exec python3 /home/kareem/.config/sway/transparency.py
+exec python3 $HOME/.config/sway/transparency.py
 
 #
 # Utilities

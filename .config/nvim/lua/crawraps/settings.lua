@@ -5,7 +5,7 @@ local o = vim.o
 -- vim.api.nvim_command('filetype plugin indent on')
 
 o.termguicolors = true
--- o.background = 'dark'
+o.background = 'dark'
 
 -- Do not save when switching buffers
 -- o.hidden = true
@@ -22,7 +22,7 @@ o.number = true
 o.numberwidth = 3
 o.relativenumber = true
 o.signcolumn = 'yes:2'
-o.cursorline = true
+o.cursorline = false
 
 -- Better editing experience
 o.expandtab = true
@@ -45,6 +45,9 @@ o.clipboard = 'unnamedplus'
 -- Case insensitive searching UNLESS /C or capital in search
 o.ignorecase = true
 o.smartcase = true
+
+-- Hide commandline
+o.cmdheight = 0
 
 -- Undo and backup options
 o.backup = false

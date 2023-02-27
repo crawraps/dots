@@ -47,3 +47,5 @@ map('n', '<C-l>', ':BufferLineMoveNext<CR>')
 
 map('n', '<leader>q', ':bd<CR>')
 
+-- Reload nvim
+map('n', '<F5>', ':source $HOME/.config/nvim/init.lua<CR>')

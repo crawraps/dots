@@ -30,9 +30,35 @@ require("catppuccin").setup({
     },
     color_overrides = {
       all = {
-        text = '#ffffff',
-        surface2 = '#787878'
-    }
+        rosewater = "#F2D5CF",
+        flamingo = "#EEBEBE",
+        pink = "#F4B8E4",
+        mauve = "#cf96f7",
+        red = "#E78284",
+        maroon = "#EA999C",
+        peach = "#faa65b",
+        yellow = "#f7e593",
+        green = "#94f5b7",
+        teal = "#5bd0dc",
+        sky = "#99D1DB",
+        sapphire = "#85C1DC",
+        blue = "#fc99cd",
+        lavender = "#f9cfe2",
+
+        text = "#F4CDE9",
+        subtext1 = "#DEBAD4",
+        subtext0 = "#C8A6BE",
+        overlay2 = "#B293A8",
+        overlay1 = "#9C7F92",
+        overlay0 = "#866C7D",
+        surface2 = "#866C7D",
+        surface1 = "#5A4551",
+        surface0 = "#44313B",
+
+        base = "#352939",
+        mantle = "#211924",
+        crust = "#1a1016",
+    },
   },
     custom_highlights = {},
     integrations = {
@@ -40,11 +66,32 @@ require("catppuccin").setup({
         gitsigns = true,
         nvimtree = true,
         telescope = true,
+        hop = true,
         notify = false,
         mini = false,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        indent_blankline = {
+            enabled = true,
+            colored_indent_levels = false,
+        },
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+            },
+            underlines = {
+                errors = { "underline" },
+                hints = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+            },
+        },
+        navic = {
+            enabled = true,
+        },
     },
 })
 
--- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+vim.cmd('colorscheme catppuccin')

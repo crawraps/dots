@@ -43,9 +43,10 @@ local Telescope = setmetatable({}, {
 
 -- Ctrl-p = fuzzy finder
 vim.keymap.set('n', '<C-P>', function()
-    finders.git_files({
-      hidden = true,
-    })
+    local ok = pcall(Telescope.git_files, { show_untracked = true })
+    if not ok then
+      Telescope.find_files()
+    end
 end)
 
 -- get :help at the speed of light

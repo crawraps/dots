@@ -31,7 +31,18 @@ return require('packer').startup({
                 require('crawraps.plugins.catppuccin')
             end,
         })
-        use 'marko-cerovac/material.nvim'
+        use({
+          "ellisonleao/gruvbox.nvim",
+          as = "gruvbox",
+        })
+        use({
+          "savq/melange-nvim",
+          as = "gruvbox",
+          config = function()
+              require('crawraps.plugins.gruvbox')
+          end,
+        })
+        use "sainnhe/everforest"
 
         use({'stevearc/dressing.nvim'}) -- popups
 
@@ -97,7 +108,7 @@ return require('packer').startup({
             'norcalli/nvim-colorizer.lua',
             event = 'CursorHold',
             config = function()
-                require('colorizer').setup()
+                require('crawraps.plugins.colorizer')
             end,
         })
 
@@ -268,6 +279,19 @@ return require('packer').startup({
             config = function()
                 require('crawraps.plugins.lsp.null-ls')
             end,
+        })
+
+        use({
+            "williamboman/mason.nvim",
+            as = 'mason',
+            config = function()
+                require('crawraps.plugins.lsp.mason')
+            end,
+        })
+
+        use ({
+          "SmiteshP/nvim-navic",
+          requires = "neovim/nvim-lspconfig",
         })
 
         use({
