@@ -1,83 +1,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "Source code pro";
-  font-weight: 500;
-  font-size: 12px;
   min-height: 0;
 }
 
-window#waybar {
-  background: rgba(0, 0, 0, 0.68);
-  color: rgba(255, 255, 255, 0.75);
-}
-
-#window {
-  font-size: 12px;
-}
-
-#workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 10px;
-  transition: all 0.2s ease-out;
-  border-top: 2px solid transparent;
-}
-
-#workspaces button.focused {
-  border-top: 2px solid #ec3dc6;
-  color: #ec3dc6;
-  min-width: 60px;
-}
-
-#mode {
-  background: #ec3dc6;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#custom-spotify,
-#tray,
-#mode,
-#language,
-#backlight {
-  padding: 0 6px;
-  margin: 0 2px;
-}
-
-#clock {
-  font-weight: 400;
-}
-
-#battery icon {
-  color: rgb(143, 21, 21);
-}
-
-@keyframes blink {
-  to {
-    background-color: rgba(255, 255, 255, 0.75);
-    color: black;
-  }
-}
-
-#battery.warning:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#network.disconnected {
-  background: #b61414;
-}
-
-#custom-media {
-  margin-left: 0px;
-  color: grey;
-}
+@import "./bars/classic-top/style.css";
+@import "./bars/classic-top/style-fsc.css";

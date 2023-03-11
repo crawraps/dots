@@ -1,0 +1,35 @@
+(deflisten player-metadata :initial '{"status": "Stopped"}' `playerctl metadata -f '{"status": "{{ status }}", "artist": "{{ artist }}", "title": "{{ title }}"}' --follow`)
+(defvar player-revealed-hover false)
+
+(defwidget player []
+  (eventbox
+    :class 'player'
+    :onclick '${player-metadata.status == "Playing" ? 'playerctl pause' : 'playerctl play'}'
+    :cursor 'pointer'
+    (box
+      :orientation 'h'
+      :class 'box'
+      :space-evenly false
+      (label
+        :class 'player-icon'
+        :halign 'fill'
+        :text ''
+      )
+      (revealer
+        :class 'data'
+        :class 'player-icon'
+        :reveal {player-metadata.status == 'Playing' || player-revealed-hover}
+        :transition 'slideright'
+        :halign 'start'
+        (box
+          :class 'data-box'
+          :style 'opacity: ${player-metadata.status == "Playing" ? 1 : 0}'
+          (label
+            :text '${player-metadata.artist} - ${player-metadata.title}'
+            :limit-width 30
+          )
+        )
+      )
+    )
+  )
+)

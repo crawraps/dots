@@ -234,7 +234,7 @@ gaps inner 0
 gaps outer 0
 
 bindsym $mod+Shift+f gaps inner current set 0; gaps outer current set 0;
-bindsym $mod+Shift+d gaps inner current set 12; gaps outer current set 0;
+bindsym $mod+Shift+d gaps inner current set 7; gaps outer current set 0;
 
 set $mode_gaps Gaps: (o)uter, (i)nner, (d)eafault
 set $mode_gaps_outer Outer Gaps: + | - | 0 | (local), Shift + | - | 0 (global)
@@ -311,8 +311,8 @@ bindsym ctrl+shift+escape exec $term htop
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-   swaybar_command waybar 
+bar classic-top {
+   swaybar_command waybar
 }
 
 # include /etc/sway/config.d/*

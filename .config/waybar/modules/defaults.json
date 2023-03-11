@@ -1,0 +1,78 @@
+{
+  "sway/language": {
+    "format": "{short}"
+  },
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false
+  },
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "separate-outputs": true,
+    "format-icons": {
+      "1": "",
+      "2": " ",
+      "3": " "
+    }
+  },
+
+  "hyprland/language": {
+    "format": "{short}"
+  },
+
+  "clock": {
+    "format": "{:%I:%M}",
+    "tooltip": true
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": [""]
+  },
+
+  "cpu": {
+    "format": "{usage}% "
+  },
+
+  "memory": {
+    "format": "{used:0.2f} "
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "{essid} ",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "Disconnected ⚠"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "0% {icon}",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "on-click": "pavucontrol"
+  }
+}

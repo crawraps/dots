@@ -1,0 +1,107 @@
+.classic-top * {
+  border-radius: 8px;
+}
+
+window#waybar.classic-top {
+  background: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Cousine Nerd Font";
+  font-weight: 600;
+  font-size: 11px;
+  border-radius: 2px;
+}
+
+/* module groups */
+/*.classic-top .modules-left,*/
+.classic-top .modules-right,
+.classic-top .modules-center {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0;
+}
+
+.classic-top .modules-right {
+  padding: 0 0.75em;
+}
+
+.classic-top .modules-right * {
+  padding: 0 0.75em;
+  margin: 0 8px;
+}
+
+.classic-top .modules-center * {
+  padding: 0 0.75em;
+  margin: 0 2px;
+}
+
+.classic-top .modules-right *:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* workspaces */
+.classic-top #workspaces {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.classic-top #workspaces button {
+  padding: 2px 5px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.classic-top #workspaces button.active {
+  color: white;
+  min-width: 60px;
+  font-size: 14px;
+  background-color: rgba(252, 153, 205, 0.8);
+  border-radius: 0;
+}
+
+.classic-top #workspaces button:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.classic-top #workspaces button:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.classic-top #submap {
+  margin: 0 6px;
+  min-width: 60px;
+  background-color: rgba(252, 153, 205, 0.8);
+}
+
+/* some modules */
+.classic-top #battery.warning:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+  }
+}
+
+.classic-top #network.disconnected {
+  background: rgba(252, 153, 205, 0.8);
+}
+
+.classic-top #custom-media {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.4s ease-in-out;
+  margin-left: 1em;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 0 1em;
+  font-weight: 500;
+}

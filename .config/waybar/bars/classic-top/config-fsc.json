@@ -1,0 +1,23 @@
+{
+  "id": "classic-top-fsc",
+  "name": "classic-top-fsc",
+  "layer": "top",
+  "position": "top",
+
+  "height": 22,
+  "include": [
+    "$HOME/.config/waybar/modules/defaults.json",
+    "$HOME/.config/waybar/modules/media/config.json"
+  ],
+  "modules-left": ["wlr/workspaces", "hyprland/submap", "custom/media"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "custom/gpu-usage",
+    "cpu",
+    "memory",
+    "network",
+    "battery"
+  ]
+}

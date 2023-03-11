@@ -1,0 +1,97 @@
+.classic-top-fsc * {
+  border-radius: 8px;
+}
+
+window#waybar.classic-top-fsc {
+  background: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Cousine Nerd Font";
+  font-weight: 600;
+  font-size: 11px;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* module groups */
+/*.classic-top .modules-left,*/
+.classic-top-fsc .modules-right,
+.classic-top-fsc .modules-center {
+  background-color: transparent;
+  padding: 0;
+}
+
+.classic-top-fsc .modules-right {
+  padding: 0 0.75em;
+}
+
+.classic-top-fsc .modules-right * {
+  padding: 0 0.75em;
+  margin: 0 8px;
+}
+
+.classic-top-fsc .modules-center * {
+  padding: 0 0.75em;
+  margin: 0 2px;
+}
+
+.classic-top-fsc .modules-right *:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* workspaces */
+.classic-top-fsc #workspaces {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.classic-top-fsc #workspaces button {
+  padding: 2px 5px 2px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.classic-top-fsc #workspaces button.active {
+  color: white;
+  min-width: 60px;
+  font-size: 14px;
+  background-color: rgba(252, 153, 205, 0.8);
+  border-radius: 0;
+}
+
+.classic-top-fsc #submap {
+  margin: 0 6px;
+  min-width: 60px;
+  background-color: rgba(252, 153, 205, 0.8);
+}
+
+/* some modules */
+.classic-top-fsc #battery.warning:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+  }
+}
+
+.classic-top-fsc #network.disconnected {
+  background: rgba(252, 153, 205, 0.8);
+}
+
+.classic-top-fsc #custom-media {
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 0.5em;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0 1em;
+  font-weight: 500;
+}
